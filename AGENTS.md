@@ -59,3 +59,12 @@ Maintain a lean, high-signal test suite strictly proportional to functional scop
   - Test suites should be actively refactored and reduced when coverage can be preserved with fewer tests.
 - **Verification Over Blind Trust**:
   - Passing tests are evidence, not proof that the fix or implementation is correct; verify root causes, edge conditions, and core assumptions directly.
+
+## 6. Fork Maintenance
+
+- This fork is `chuanLL/mdcz`; `origin` is the fork and `upstream` is `ShotHeadman/mdcz`.
+- `main` tracks official history; `nas-maintained` carries our tested changes. Keep feature branches independent so upstream PRs do not include fork-only documentation.
+- Follow [the fork maintenance workflow](docs/fork/MAINTENANCE.md) for upstream integration and release handoff.
+- Integrate upstream changes in an isolated branch, inspect the merge, and run checks appropriate to the changes before advancing `nas-maintained`. Preserve local work; never force-push shared branches.
+- Keep production credentials, databases, media, private operation records and machine-specific configuration outside this public repository.
+- Source integration does not deploy to a NAS. A production deployment must verify the target, back up current data/configuration, account for runtime overlays and migrations, and have separate user authorization.
