@@ -370,8 +370,13 @@ describe("NetworkClient retry policy", () => {
 
     for (const url of [
       "http://127.0.0.1:8096/System/Info",
+      "http://localhost:8096/System/Info",
       "http://192.168.1.50:8096/System/Info",
       "http://100.100.1.2:8096/System/Info",
+      "http://[::1]:8096/System/Info",
+      "http://[fd00::1]:8096/System/Info",
+      "http://[fe80::1]:8096/System/Info",
+      "http://[::ffff:192.168.1.50]:8096/System/Info",
       "http://jellyfin:8096/System/Info",
       "http://nas.local:8096/System/Info",
     ]) {
